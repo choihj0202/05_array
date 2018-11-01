@@ -1,53 +1,25 @@
 #include <stdio.h>
 #include <stdlib.h>
-#define ROWS 3
-#define COLS 3
+#define NUM 4
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
-int addMatrix(int A[][COLS], int B[][COLS], int C[][COLS])
-{
-	int i, j;
-	
-	for (i=0; i<ROWS; i++) {
-		for (j=0; j<COLS; j++) {
-			C[i][j] = A[i][j] + B[i][j];
-		}
-	}
-	
-	return 1;
-}
-
-void printMatrix(int A[][COLS])
-{
-	int i, j;
-	
-	for (i=0; i<ROWS; i++) {
-		for (j=0; j<COLS; j++)
-		{
-			printf("%d ", A[i][j]);
-		}
-		printf("\n");
-	 } 
-	 
-	return;
-}
 
 int main(int argc, char *argv[]) {
 	
-	int A[ROWS][COLS] = {
-	{2, 3, 0},
-	{8, 9, 1},
-	{7, 0, 5}};
+	int nums[NUM], i;
 	
-	int B[ROWS][COLS] = {
-	{1, 0, 0},
-	{0, 1, 0},
-	{0, 0, 1}};
+	printf("INPUT %d NUMBERS : ", NUM);
 	
-	int C[ROWS][COLS];
+	for (i=0; i<NUM; i++)
+	{
+		scanf("%d", &nums[i]);
+	}
 	
-	addMatrix(A, B, C);
-	printMatrix(C);
+	printf("SORTED NUMBERS ARE : ");
+	for (i=0; i<NUM; i++)
+	{
+		printf("%d ", nums[i]);
+	}
 	
 	return 0;
 }
